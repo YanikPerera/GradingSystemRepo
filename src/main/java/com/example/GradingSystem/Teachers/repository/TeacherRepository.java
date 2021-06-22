@@ -2,10 +2,12 @@ package com.example.GradingSystem.Teachers.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.GradingSystem.Teachers.domain.TeacherDomain;
+import com.example.GradingSystem.Teachers.domain.AssignmentsDomain;
 
 
-public interface TeacherRepository extends JpaRepository<TeacherDomain,Integer> {
+
+public interface TeacherRepository extends JpaRepository<AssignmentsDomain,Integer> {
+	
 	
 	// we can proceed here our crud operations 
 	//getALLusers
@@ -15,3 +17,4 @@ public interface TeacherRepository extends JpaRepository<TeacherDomain,Integer> 
 	//custom query
 
 }
+
