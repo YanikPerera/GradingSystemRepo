@@ -8,9 +8,12 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.GradingSystem.Students.domian.StudentAnswerDomian;
 import com.example.GradingSystem.Students.repository.StudentServiceRepo;
+import com.example.GradingSystem.Teachers.domain.QuestionDomain;
 
 
 @RestController
@@ -32,7 +35,7 @@ public List<StudentAnswerDomian> StudentResultChecker() {
 			}
 @GetMapping("/reviewanswer/{id}")
 public Optional<StudentAnswerDomian> ReviewAnswer(@PathVariable Integer id) {
-		StudentAnswerDomian studentanswer ;
+		//StudentAnswerDomian studentanswer ;
 		
 		//once we auto-wired we can use this injection to add interface functions 
 			return studentservicerepo.ReviewAnswer(id);
@@ -40,6 +43,40 @@ public Optional<StudentAnswerDomian> ReviewAnswer(@PathVariable Integer id) {
 //				return "All users";
 				
 			}
+
+/*@RequestMapping(path = "/reviewanswers/{studentid}/{assignmentid}/{questionid}", method = RequestMethod.GET)
+public List<StudentAnswerDomian> getAnswer(@PathVariable Integer studentid, @PathVariable  Integer assignmentid, @PathVariable  Integer questionid) {
+
+	System.out.println(studentid+assignmentid+questionid);
+return studentservicerepo.Getanswers(studentid,assignmentid,questionid);
+
+	
+}*/
+
+@RequestMapping(path = "/reviewsubmitedans/{studentid}/{assignmentid}/{questionid}", method = RequestMethod.GET)
+public List<StudentAnswerDomian> getBook(@PathVariable Integer studentid, @PathVariable  Integer assignmentid, @PathVariable  Integer questionid) {
+	
+	return studentservicerepo.Getanswers(studentid,assignmentid,questionid);
+    // code here
+}
+@RequestMapping(path = "/reviewquecstions/{assignmentid}/{questionno}", method = RequestMethod.GET)
+public List<QuestionDomain> getQuestions( @PathVariable  Integer assignmentid, @PathVariable  Integer questionno) {
+	
+	return studentservicerepo.GetQuecstionAns(assignmentid,questionno);
+
+	// code here
+}
+
+/*@RequestMapping(path = "/reviewanswers/{studentid}/{assignmentid}/{questionid}", method = RequestMethod.GET)
+public List<StudentAnswerDomian> getAnswer(@PathVariable Integer studentid, @PathVariable  Integer assignmentid, @PathVariable  Integer questionid) {
+
+
+return studentservicerepo.Getanswers(studentid,assignmentid,questionid);
+
+	
+}*/
+
+
 	
 //this is update quarry
 //@GetMapping("/find/{id}") this @getMapping we can identify the end of the URL should 

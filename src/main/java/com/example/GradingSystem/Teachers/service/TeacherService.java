@@ -86,8 +86,14 @@ if(addQuecstion.getQuestionid() ==null || addQuecstion.getAssignmentid() ==null|
 
 
 	@Override
-	public List<QuestionDomain> StudentGrade() {
+	public String StudentGrade(Integer studentid, Integer assignmentid) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
+	
+
+
+	
 }

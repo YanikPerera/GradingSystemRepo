@@ -22,13 +22,13 @@ public class StudentAnswerDomian {
 	private Integer Answer;
 	@NotNull
 	@Column(name = "assignment_id")
-	private Integer Assignmentid;
+	private Integer assignmentid;
 	@NotNull
 	@Column(name = "student_id")
-	private Integer Studentid;
+	private Integer studentid;
 	@NotNull
 	@Column(name = "question_id")
-	private Integer Questionid;
+	private Integer questionid;
 	public Integer getAnswerid() {
 		return Answerid;
 	}
@@ -42,22 +42,22 @@ public class StudentAnswerDomian {
 		Answer = answer;
 	}
 	public Integer getAssignmentid() {
-		return Assignmentid;
+		return assignmentid;
 	}
 	public void setAssignmentid(Integer assignmentid) {
-		Assignmentid = assignmentid;
+		this.assignmentid = assignmentid;
 	}
 	public Integer getStudentid() {
-		return Studentid;
+		return studentid;
 	}
 	public void setStudentid(Integer studentid) {
-		Studentid = studentid;
+		this.studentid = studentid;
 	}
 	public Integer getQuestionid() {
-		return Questionid;
+		return questionid;
 	}
 	public void setQuestionid(Integer questionid) {
-		Questionid = questionid;
+		this.questionid = questionid;
 	}
 	
 	

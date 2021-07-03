@@ -17,56 +17,58 @@ public class QuestionDomain {
 	private Integer Questionid;
 	
 	@Column(name = "question_no")
-	private String Questionno;
+	private Integer questionno;
 	
 	@Column(name = "question")
-	private String Question;
+	private String question;
 	
 	@Column(name = "answer")
-	private Integer Answer;
+	private Integer answer;
 	
 	@Column(name = "assignment_id")
-	private Integer Assignmentid;
+	private Integer assignmentid;
 
 	public Integer getQuestionid() {
 		return Questionid;
 	}
 
-	public String getQuestionno() {
-		return Questionno;
-	}
-
-	public void setQuestionno(String questionno) {
-		Questionno = questionno;
-	}
-
-	public String getQuestion() {
-		return Question;
-	}
-
-	public void setQuestion(String question) {
-		Question = question;
-	}
-
-	public Integer getAnswer() {
-		return Answer;
-	}
-
-	public void setAnswer(Integer answer) {
-		Answer = answer;
-	}
-
-	public Integer getAssignmentid() {
-		return Assignmentid;
-	}
-
-	public void setAssignmentid(Integer assignmentid) {
-		Assignmentid = assignmentid;
-	}
-
 	public void setQuestionid(Integer questionid) {
 		Questionid = questionid;
 	}
+
+	public Integer getQuestionno() {
+		return questionno;
+	}
+
+	public void setQuestionno(Integer questionno) {
+		this.questionno = questionno;
+	}
+
+	public String getQuestion() {
+		return question;
+	}
+
+	public void setQuestion(String question) {
+		this.question = question;
+	}
+
+	public Integer getAnswer() {
+		return answer;
+	}
+
+	public void setAnswer(Integer answer) {
+		this.answer = answer;
+	}
+
+	public Integer getAssignmentid() {
+		return assignmentid;
+	}
+
+	public void setAssignmentid(Integer assignmentid) {
+		this.assignmentid = assignmentid;
+	}
+
+	
 
 	
 

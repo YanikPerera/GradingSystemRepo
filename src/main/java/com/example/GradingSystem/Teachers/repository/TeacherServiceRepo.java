@@ -17,7 +17,7 @@ public interface TeacherServiceRepo {
 
 	String SaveQuesction(QuestionDomain addQuecstion);
 
-	List<QuestionDomain> StudentGrade();
+	String StudentGrade(Integer studentid, Integer assignmentid);
 
 	List<QuestionDomain> StaticAnswer();
 

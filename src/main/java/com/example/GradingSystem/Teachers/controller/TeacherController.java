@@ -5,9 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.GradingSystem.Teachers.domain.AssignmentsDomain;
@@ -53,11 +55,12 @@ public String addQuestion(@RequestBody QuestionDomain addQuecstion) {
 	
 }
 
+@RequestMapping(path = "/studentgrade/{studentid}/{assignmentid}", method = RequestMethod.GET)
 @GetMapping("/studentgrade")	
-public List<QuestionDomain> StudentGrade() {
+public String StudentGrade( @PathVariable  Integer studentid, @PathVariable  Integer assignmentid) {
 	
 //once we auto-wired we can use this injection to add interface functions 
-	return teacherservicerepo.StudentGrade();
+	return teacherservicerepo.StudentGrade(studentid,assignmentid);
 
 	}
 
